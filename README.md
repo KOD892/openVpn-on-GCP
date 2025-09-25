@@ -20,6 +20,11 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    export REGION=us-central1
    export ZONE=us-central1-a
    ```
+   <figure>
+  <img src="./screenshots/set region and zone vars.png" alt="Alt text">
+  <figcaption>Setting Region and Zone</figcaption>
+</figure>
+
 
 4. **Create the VM Instance**  
    Create a VM named `ovpntest` with a lightweight Ubuntu image and enable IP forwarding:
@@ -33,7 +38,10 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    ```
    - `--can-ip-forward` allows the VM to route packets (needed for VPN).
    - `--tags openvpn-server` helps identify the VM and is used for firewall rules.
-
+<figure>
+  <img src="./screenshots/vm setup complete edited.png" alt="Alt text">
+  <figcaption>VM Setup Complete</figcaption>
+</figure>
 ---
 
 ## STEP 2: IP Address Assignment & Firewall Setup
@@ -45,6 +53,10 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    gcloud compute addresses list
    ```
    Take note of the reserved IP address.
+   <figure>
+  <img src="./screenshots/check reserved address addre.png" alt="Alt text">
+  <figcaption>Reserved Address</figcaption>
+</figure>
 
 2. **Remove Temporary External IP**  
    When first created, the VM has an ephemeral external IP. Remove it:
@@ -68,6 +80,10 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
      --target-tags=openvpn-server \
      --description="Allow OpenVPN UDP 1194"
    ```
+   <figure>
+  <img src="./screenshots/firewall rule created.png" alt="Alt text">
+  <figcaption>Creating Firewall Rule</figcaption>
+</figure>
 
 ---
 
@@ -85,6 +101,10 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    ```bash
    wget https://git.io/vpn -O openvpn-install.sh && sudo bash openvpn-install.sh
    ```
+    <figure>
+  <img src="./screenshots/install begin.png" alt="Alt text">
+  <figcaption>OpenVPN Install Begin</figcaption>
+</figure>
    - At the end, note the path to the generated `.ovpn` client configuration file.
 
 3. **Verify OpenVPN is Running**
@@ -92,6 +112,10 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    sudo service openvpn status
    ```
    - The status should indicate that OpenVPN is active/running.
+    <figure>
+  <img src="./screenshots/openvpn status.png" alt="Alt text">
+  <figcaption>openvpn status</figcaption>
+</figure>
 
 4. **Enable IP Forwarding & Configure NAT**  
    This allows VPN clients to route traffic through the VM to the internet.
@@ -123,10 +147,22 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    exit
    gcloud compute scp ovpntest:<.ovpn file path> ./ --zone=$ZONE
    ```
+    <figure>
+  <img src="./screenshots/config file downloaded.png" alt="Alt text">
+  <figcaption>Copying Client Config to Cloud Shell</figcaption>
+</figure>
 
 2. **Download to Your Client Device**  
    Transfer the `.ovpn` file to your client device (e.g. Parrot OS, Windows, Mac).  
-   Use SCP, SFTP, or download via the Cloud Shell interface.
+   You can do this via the Cloud Shell interface.
+    <figure>
+  <img src="./screenshots/download file 1.png" alt="Alt text">
+  <figcaption>Click on options</figcaption>
+</figure>
+ <figure>
+  <img src="./screenshots/download file 2.png" alt="Alt text">
+  <figcaption>Click on download</figcaption>
+</figure>
 
 3. **Import the .ovpn File into Your Client**  
    - Use [OpenVPN GUI](https://openvpn.net/community-downloads/) or [NetworkManager](https://wiki.archlinux.org/title/NetworkManager#OpenVPN) depending on your OS.
