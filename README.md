@@ -22,7 +22,7 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    ```
    <figure>
   <img src="./screenshots/set region and zone vars.png" alt="Alt text">
-  <figcaption>Setting Region and Zone</figcaption>
+  <figcaption style="font-size:8px; text-align: center">Setting Region and Zone</figcaption>
 </figure>
 
 
@@ -40,7 +40,7 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    - `--tags openvpn-server` helps identify the VM and is used for firewall rules.
 <figure>
   <img src="./screenshots/vm setup complete edited.png" alt="Alt text">
-  <figcaption>VM Setup Complete</figcaption>
+  <figcaption style="font-size:8px;text-align: center ">VM Setup Complete</figcaption>
 </figure>
 ---
 
@@ -55,7 +55,7 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    Take note of the reserved IP address.
    <figure>
   <img src="./screenshots/check reserved address addre.png" alt="Alt text">
-  <figcaption>Reserved Address</figcaption>
+  <figcaption style="font-size:8px; text-align: center">Reserved Address</figcaption>
 </figure>
 
 2. **Remove Temporary External IP**  
@@ -82,7 +82,7 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    ```
    <figure>
   <img src="./screenshots/firewall rule created.png" alt="Alt text">
-  <figcaption>Creating Firewall Rule</figcaption>
+  <figcaption style="font-size:8px; text-align: center">Creating Firewall Rule</figcaption>
 </figure>
 
 ---
@@ -103,7 +103,7 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    ```
     <figure>
   <img src="./screenshots/install begin.png" alt="Alt text">
-  <figcaption>OpenVPN Install Begin</figcaption>
+  <figcaption style="font-size:8px; text-align: center">OpenVPN Install Begin</figcaption>
 </figure>
    - At the end, note the path to the generated `.ovpn` client configuration file.
 
@@ -114,7 +114,7 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    - The status should indicate that OpenVPN is active/running.
     <figure>
   <img src="./screenshots/openvpn status.png" alt="Alt text">
-  <figcaption>openvpn status</figcaption>
+  <figcaption style="font-size:8px; text-align: center">openvpn status</figcaption>
 </figure>
 
 4. **Enable IP Forwarding & Configure NAT**  
@@ -149,7 +149,7 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    ```
     <figure>
   <img src="./screenshots/config file downloaded.png" alt="Alt text">
-  <figcaption>Copying Client Config to Cloud Shell</figcaption>
+  <figcaption style="font-size:8px; text-align: center">Copying Client Config to Cloud Shell</figcaption>
 </figure>
 
 2. **Download to Your Client Device**  
@@ -161,7 +161,7 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
 </figure>
  <figure>
   <img src="./screenshots/download file 2.png" alt="Alt text">
-  <figcaption>Click on download</figcaption>
+  <figcaption style="font-size:8px;text-align: center">Click on download</figcaption>
 </figure>
 
 3. **Import the .ovpn File into Your Client**  
