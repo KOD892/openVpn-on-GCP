@@ -164,10 +164,25 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
   <figcaption style="font-size:8px;text-align: center">Click on download</figcaption>
 </figure>
 
-3. **Import the .ovpn File into Your Client**  
-   - Use [OpenVPN GUI](https://openvpn.net/community-downloads/) or [NetworkManager](https://wiki.archlinux.org/title/NetworkManager#OpenVPN) depending on your OS.
+3. **Check current IP address and location** 
+   - Before connecting to the vpn server I first check my ip address and location using [what is my ip address](https://whatismyipaddress.com/)
+   This confirms my current Location and ISP.
+    <figure>
+  <img src="./screenshots/my ip before running ovpn edited.png" alt="Alt text">
+  <figcaption style="font-size:8px;text-align: center">IP address Before connecting to VPN server</</figcaption>
+</figure>
+
+4. **Import the .ovpn File into Your Client**  
+   - Use [OpenVPN GUI](https://openvpn.net/community-downloads/) or [NetworkManager](https://wiki.archlinux.org/title/NetworkManager#OpenVPN) depending on your OS. In my case i use Openvpn CLI on ParrotOS
+```bash
+ sudo openvpn client.ovpn
+```
    - Connect and verify that your client receives an IP address in the VPN subnet (usually `10.8.0.x`).
-   - Test connectivity to the internet and internal resources as needed.
+   - Test connectivity to the internet and check your IP address and location using [what is my ip address](https://whatismyipaddress.com/)
+   -  <figure>
+  <img src="./screenshots/ip successful edited.png" alt="Alt text">
+  <figcaption style="font-size:8px;text-align: center">IP address after connecting to VPN server</figcaption>
+</figure>
 
 ---
 
