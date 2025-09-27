@@ -20,9 +20,9 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    export REGION=us-central1
    export ZONE=us-central1-a
    ```
-   <figure>
-  <img src="./screenshots/set region and zone vars.png" alt="Alt text">
-  <figcaption style="font-size:8px; text-align: center">Setting Region and Zone</figcaption>
+   <figure style="text-align: center;">
+  <img src="./screenshots/set region and zone vars.png" alt="Setting Region and Zone" style="max-width: 100%; height: auto;">
+  <figcaption style="font-size: 14px; color: #666; margin-top: 8px;">Setting Region and Zone</figcaption>
 </figure>
 
 
@@ -38,9 +38,9 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    ```
    - `--can-ip-forward` allows the VM to route packets (needed for VPN).
    - `--tags openvpn-server` helps identify the VM and is used for firewall rules.
-<figure>
-  <img src="./screenshots/vm setup complete edited.png" alt="Alt text">
-  <figcaption style="font-size:8px;text-align: center ">VM Setup Complete</figcaption>
+<figure style="text-align: center;">
+  <img src="./screenshots/vm setup complete edited.png" alt="VM Setup Complete" style="max-width: 100%; height: auto;">
+  <figcaption style="font-size: 14px; color: #666; margin-top: 8px;">VM Setup Complete</figcaption>
 </figure>
 ---
 
@@ -53,9 +53,9 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    gcloud compute addresses list
    ```
    Take note of the reserved IP address.
-   <figure>
-  <img src="./screenshots/check reserved address addre.png" alt="Alt text">
-  <figcaption style="font-size:8px; text-align: center">Reserved Address</figcaption>
+   <figure style="text-align: center;">
+  <img src="./screenshots/check reserved address addre.png" alt="Reserved Address" style="max-width: 100%; height: auto;">
+  <figcaption style="font-size: 14px; color: #666; margin-top: 8px;">Reserved Address</figcaption>
 </figure>
 
 2. **Remove Temporary External IP**  
@@ -80,9 +80,9 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
      --target-tags=openvpn-server \
      --description="Allow OpenVPN UDP 1194"
    ```
-   <figure>
-  <img src="./screenshots/firewall rule created.png" alt="Alt text">
-  <figcaption style="font-size:8px; text-align: center">Creating Firewall Rule</figcaption>
+   <figure style="text-align: center;">
+  <img src="./screenshots/firewall rule created.png" alt="Creating Firewall Rule" style="max-width: 100%; height: auto;">
+  <figcaption style="font-size: 14px; color: #666; margin-top: 8px;">Creating Firewall Rule</figcaption>
 </figure>
 
 ---
@@ -101,9 +101,9 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    ```bash
    wget https://git.io/vpn -O openvpn-install.sh && sudo bash openvpn-install.sh
    ```
-    <figure>
-  <img src="./screenshots/install begin.png" alt="Alt text">
-  <figcaption style="font-size:8px; text-align: center">OpenVPN Install Begin</figcaption>
+    <figure style="text-align: center;">
+  <img src="./screenshots/install begin.png" alt="OpenVPN Install Begin" style="max-width: 100%; height: auto;">
+  <figcaption style="font-size: 14px; color: #666; margin-top: 8px;">OpenVPN Install Begin</figcaption>
 </figure>
    - At the end, note the path to the generated `.ovpn` client configuration file.
 
@@ -112,9 +112,9 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    sudo service openvpn status
    ```
    - The status should indicate that OpenVPN is active/running.
-    <figure>
-  <img src="./screenshots/openvpn status.png" alt="Alt text">
-  <figcaption style="font-size:8px; text-align: center">openvpn status</figcaption>
+    <figure style="text-align: center;">
+  <img src="./screenshots/openvpn status.png" alt="OpenVPN Status" style="max-width: 100%; height: auto;">
+  <figcaption style="font-size: 14px; color: #666; margin-top: 8px;">OpenVPN Status</figcaption>
 </figure>
 
 4. **Enable IP Forwarding & Configure NAT**  
@@ -147,29 +147,29 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
    exit
    gcloud compute scp ovpntest:<.ovpn file path> ./ --zone=$ZONE
    ```
-    <figure>
-  <img src="./screenshots/config file downloaded.png" alt="Alt text">
-  <figcaption style="font-size:8px; text-align: center">Copying Client Config to Cloud Shell</figcaption>
+    <figure style="text-align: center;">
+  <img src="./screenshots/config file downloaded.png" alt="Copying Client Config to Cloud Shell" style="max-width: 100%; height: auto;">
+  <figcaption style="font-size: 14px; color: #666; margin-top: 8px;">Copying Client Config to Cloud Shell</figcaption>
 </figure>
 
 2. **Download to Your Client Device**  
    Transfer the `.ovpn` file to your client device (e.g. Parrot OS, Windows, Mac).  
    You can do this via the Cloud Shell interface.
-    <figure>
-  <img src="./screenshots/download file 1.png" alt="Alt text">
-  <figcaption>Click on options</figcaption>
+    <figure style="text-align: center;">
+  <img src="./screenshots/download file 1.png" alt="Click on Options" style="max-width: 100%; height: auto;">
+  <figcaption style="font-size: 14px; color: #666; margin-top: 8px;">Click on Options</figcaption>
 </figure>
- <figure>
-  <img src="./screenshots/download file 2.png" alt="Alt text">
-  <figcaption style="font-size:8px;text-align: center">Click on download</figcaption>
+ <figure style="text-align: center;">
+  <img src="./screenshots/download file 2.png" alt="Click on Download" style="max-width: 100%; height: auto;">
+  <figcaption style="font-size: 14px; color: #666; margin-top: 8px;">Click on Download</figcaption>
 </figure>
 
 3. **Check current IP address and location** 
    - Before connecting to the vpn server I first check my ip address and location using [what is my ip address](https://whatismyipaddress.com/)
    This confirms my current Location and ISP.
-    <figure>
-  <img src="./screenshots/my ip before running ovpn edited.png" alt="Alt text">
-  <figcaption style="font-size:8px;text-align: center">IP address Before connecting to VPN server</</figcaption>
+    <figure style="text-align: center;">
+  <img src="./screenshots/my ip before running ovpn edited.png" alt="IP Address Before Connecting to VPN Server" style="max-width: 100%; height: auto;">
+  <figcaption style="font-size: 14px; color: #666; margin-top: 8px;">IP Address Before Connecting to VPN Server</figcaption>
 </figure>
 
 4. **Import the .ovpn File into Your Client**  
@@ -179,9 +179,9 @@ It covers provisioning a VM, assigning a static IP, setting up firewall rules, i
 ```
    - Connect and verify that your client receives an IP address in the VPN subnet (usually `10.8.0.x`).
    - Test connectivity to the internet and check your IP address and location using [what is my ip address](https://whatismyipaddress.com/)
-   -  <figure>
-  <img src="./screenshots/ip successful edited.png" alt="Alt text">
-  <figcaption style="font-size:8px;text-align: center">IP address after connecting to VPN server</figcaption>
+   -  <figure style="text-align: center;">
+  <img src="./screenshots/ip successful edited.png" alt="IP Address After Connecting to VPN Server" style="max-width: 100%; height: auto;">
+  <figcaption style="font-size: 14px; color: #666; margin-top: 8px;">IP Address After Connecting to VPN Server</figcaption>
 </figure>
 
 ---
